@@ -1,0 +1,18 @@
+version: "3.9"
+networks:
+  default:
+    name: "mattermost-apps-dev"
+services:
+  serge:
+    image: "ghcr.io/nsarrazin/serge:latest"
+    restart: on-failure
+    volumes:
+      - datadb:/data/db
+      - weights:/usr/src/app/weights/
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8008:8008"
+
+volumes:
+  datadb:
+  weights:

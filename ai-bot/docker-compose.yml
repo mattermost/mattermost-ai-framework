@@ -1,0 +1,19 @@
+version: "3.9"
+networks:
+  default:
+    name: "mattermost-apps-dev"
+services:
+  mattermost-apps-ai-bot:
+    image: "node:lts-gallium"
+    restart: "unless-stopped"
+    working_dir: "/app"
+    ports:
+      - "9000:9000"
+    environment:
+      MATTERMOST_SITEURL: "http://mattermost:8065"
+      SERGE_SITEURL: "http://serge:8008"
+      APP_HOST: "mattermost-apps-ai-bot" # Same as the service's network name
+      APP_PORT: 9000
+    volumes:
+      - "./:/app"
+    command: "bash -c 'npm i && npm start'"
