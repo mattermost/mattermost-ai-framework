@@ -1,4 +1,4 @@
-# Mattermost AI Framework
+# Mattermost AI Chat Framework
 
 This project demonstrates the ability to run fully private and self-hosted AI chat bots in a multi-user chat environment.
 
@@ -9,14 +9,14 @@ This framework uses a Mattermost app to interface with a variety of LLM AIs. It 
 The framework consists of three components:
 1. A Mattermost server
 2. A Serge instance
-3. A Mattermost App (AI-Bot) hosted in a
+3. A Mattermost App (AI-Bot)
 
 ### Setup instructions
 
 1. Clone this repo locally
 2. Start the Mattermost server: `cd mattermost && docker compose up`
-3. Start the Serge server: `cd serge && docker compose up`
-4. Start the AI-Bot app server: `cd ai-bot && docker compose up`
+3. (In a new terminal) start the Serge server: `cd serge && docker compose up`
+4. (In a new terminal) start the AI-Bot app server: `cd ai-bot && docker compose up`
 5. Download a Serge model (recommend Gpt4All to start):
   * Open the Serge UI at `http://localhost:8008`
   * Click 'Download Models'
