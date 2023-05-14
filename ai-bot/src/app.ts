@@ -234,7 +234,6 @@ app.listen(port, () => {
 })
 
 // Returns the first available model in Serge
-// TODO: Improve model selection
 async function getModel(): Promise<string> {
 	console.log(`Making query to ${process.env.SERGE_SITEURL}`)
 	const config = new Configuration({
@@ -255,7 +254,13 @@ async function getModel(): Promise<string> {
 }
 
 async function init() {
-	model = await getModel()
+	// Allow model to be overriden with env var
+	if (process.env.SERGE_MODEL) {
+		model = process.env.SERGE_MODEL
+		console.log(`Using model from SERGE_MODEL: ${model}`)
+	} else {
+		model = await getModel()
+	}
 }
 
 init()
