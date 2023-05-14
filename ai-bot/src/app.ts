@@ -11,6 +11,9 @@ import { Client4 } from '@mattermost/client'
 
 import { Configuration } from './serge_api'
 import { ChatApi } from './serge_api/apis/ChatApi'
+import { ModelApi } from './serge_api/apis/ModelApi'
+
+let model = ''
 
 const host = process.env.APP_HOST || 'localhost'
 const port = process.env.APP_PORT || 9000
@@ -133,6 +136,11 @@ app.post('/submit', async (req, res) => {
 	console.log(`/submit:\n${JSON.stringify(req.body, null, 2)}`)
 	const call = req.body as AppCallRequest
 
+	if (!model) {
+		console.log('Checking Serge for available models...')
+		model = await getModel()
+	}
+
 	const botClient = new Client4()
 	botClient.setUrl(call.context.mattermost_site_url)
 	botClient.setToken(call.context.bot_access_token)
@@ -148,7 +156,6 @@ app.post('/submit', async (req, res) => {
 		})
 		const chat = new ChatApi(config)
 
-		const model = 'GPT4All'
 		const chatId: string = await chat.createNewChatChatPost({
 			model
 		})
@@ -208,10 +215,10 @@ function compileResponse(response: string): string {
 	// This is hokey code to compile an event stream into a single response string
 	let result = ''
 	const lines = response.split('\r\n')
-	for (let i=0; i<lines.length; i++) {
+	for (let i = 0; i < lines.length; i++) {
 		const line = lines[i]
 		if (line.startsWith('event: message') && i < lines.length) {
-			const nextLine = lines[i+1]
+			const nextLine = lines[i + 1]
 			if (nextLine.startsWith('data: ')) {
 				result += nextLine.substr(6)
 				i++
@@ -225,3 +232,30 @@ function compileResponse(response: string): string {
 app.listen(port, () => {
 	console.log(`app listening on port ${port}`)
 })
+
+// Returns the first available model in Serge
+// TODO: Improve model selection
+async function getModel(): Promise<string> {
+	console.log(`Making query to ${process.env.SERGE_SITEURL}`)
+	const config = new Configuration({
+		basePath: process.env.SERGE_SITEURL + '/api'
+	})
+
+	const modelApi = new ModelApi(config)
+	const models: any[] = await modelApi.listOfAllModelsModelAllGet()
+	// console.log(`models: ${JSON.stringify(models, null, 2)}`)
+	const model = models.find(o => o.available)
+	if (model) {
+		console.log(`Found model: ${model.name}`)
+	} else {
+		console.error(`No Serge model found. Please download a model in Serge.`)
+	}
+
+	return model ? model.name : ''
+}
+
+async function init() {
+	model = await getModel()
+}
+
+init()
