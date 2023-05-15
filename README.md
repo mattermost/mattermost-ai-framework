@@ -1,5 +1,7 @@
 # Mattermost AI Chat Framework
 
+![Screenshot](https://github.com/chenilim/mattermost-ai-framework/assets/46905241/bbdce0f0-08ba-4934-bf94-6ff55d3cc6e7)
+
 This project demonstrates the ability to run fully private and self-hosted AI chat bots in a multi-user chat environment.
 
 This framework uses a Mattermost app to interface with a variety of LLM AIs. It currently supports locally run LLMs hosted on [Serge](https://github.com/nsarrazin/serge).
