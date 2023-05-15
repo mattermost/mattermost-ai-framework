@@ -2,9 +2,9 @@
 
 ![Screenshot](https://github.com/chenilim/mattermost-ai-framework/assets/46905241/bbdce0f0-08ba-4934-bf94-6ff55d3cc6e7)
 
-This project demonstrates the ability to run fully private and self-hosted AI chat bots in a multi-user chat environment.
+This project demonstrates the ability to run self-hosted AI chat bots in a multi-user chat environment that is fully private and off-grid / air-gapped.
 
-This framework uses a Mattermost app to interface with a variety of LLM AIs. It currently supports locally run LLMs hosted on [Serge](https://github.com/nsarrazin/serge).
+This framework uses a Mattermost app to interface with a variety of LLM AIs. It currently supports locally run LLMs hosted via [Serge](https://github.com/nsarrazin/serge), which is a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) that allows LLMs to be run without a GPU.
 
 ### Architecture
 
@@ -16,6 +16,8 @@ The framework consists of three components:
 The AI-Bot routes questions to the Serge server via the REST API.
 
 ### Setup instructions
+
+Pre-reqs: [Docker](https://docs.docker.com/get-docker/).
 
 1. Clone this repo locally
 2. Start the Mattermost server: `cd mattermost && docker compose up`
