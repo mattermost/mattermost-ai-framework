@@ -146,31 +146,38 @@ app.post('/submit', async (req, res) => {
 	botClient.setToken(call.context.bot_access_token)
 
 	const formValues = call.values as FormValues
+	if (!formValues || !formValues.question) {
+		const errorResponse: AppCallResponse = {
+			type: 'error',
+			text: `Please include a question`,
+		}
+
+		res.json(errorResponse)
+	}
 
 	const query = formValues.question
 	let output = ''
-	if (query) {
-		console.log(`Making query to ${process.env.SERGE_SITEURL}`)
-		const config = new Configuration({
-			basePath: process.env.SERGE_SITEURL + '/api'
-		})
-		const chat = new ChatApi(config)
 
-		const chatId: string = await chat.createNewChatChatPost({
-			model
-		})
+	console.log(`Making query to ${process.env.SERGE_SITEURL}`)
+	const config = new Configuration({
+		basePath: process.env.SERGE_SITEURL + '/api'
+	})
+	const chat = new ChatApi(config)
 
-		console.log(`Created new chat, id: ${chatId}`)
-		const response = await chat.streamAskAQuestionChatChatIdQuestionGet({
-			chatId,
-			prompt: query
-		})
+	const chatId: string = await chat.createNewChatChatPost({
+		model
+	})
 
-		output = `### ${query}\n\n` + compileResponse(response)
-		console.log(`Serge response: ${output}`)
+	console.log(`Created new chat, id: ${chatId}`)
+	const response = await chat.streamAskAQuestionChatChatIdQuestionGet({
+		chatId,
+		prompt: query
+	})
 
-		await chat.deleteChatChatChatIdDelete({ chatId })
-	}
+	output = `### ${query}\n\n` + compileResponse(response)
+	console.log(`Serge response: ${output}`)
+
+	await chat.deleteChatChatChatIdDelete({ chatId })
 
 	const users = [
 		call.context.bot_user_id,
