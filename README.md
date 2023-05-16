@@ -35,6 +35,15 @@ Pre-reqs: [Docker](https://docs.docker.com/get-docker/).
 
 All of this should run out of the box on a 16GB M1 Macbook.
 
+### Summarize thread
+
+To summarize threads, first grant the bot account access to public channels:
+1. Open the top left Mattermost (9 square) menu and select **Integrations**
+2. Select **Bot Accounts**, and select "Edit" for **AI Bot**
+3. Check the box for **post:channels** (*Bot will have access to post to all Mattermost public channels*)
+
+Now, open the App (4 squares) menu on a post in a public channel and select **Summarize (AI)**.
+
 ### Contributions and ideas are welcome!
 
 The current stage is an early proof-of-concept. There are several directions this could go in, including:
