@@ -4,7 +4,7 @@
 
 This project demonstrates the ability to run self-hosted AI chat bots in a multi-user chat environment that is fully private and off-grid / air-gapped.
 
-This framework uses a Mattermost app to interface with a variety of LLM AIs. It currently supports locally run LLMs hosted via [Serge](https://github.com/nsarrazin/serge), which is a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) that allows LLMs to be run without a GPU.
+This framework uses a Mattermost app to interface with a variety of LLM AIs. It currently supports locally run LLMs hosted via [Serge](https://github.com/nsarrazin/serge), which is a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) that allows LLMs to be run without a GPU. See [a brief demo from May 15, 2023.](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop). 
 
 ### Architecture
 
