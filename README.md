@@ -44,6 +44,8 @@ To summarize threads, first grant the bot account access to public channels:
 
 Now, open the App (4 squares) menu on a post in a public channel and select **Summarize (AI)**.
 
+[See a brief demo here](https://community.mattermost.com/files/k4gdq47njfg6uxuzr5toq5eb4a/public?h=_Lu6LPIGENzL15vfKYSw3AId2yKSGAGySMH9nCRBr24). 
+
 ### Contributions and ideas are welcome!
 
 The current stage is an early proof-of-concept. There are several directions this could go in, including:
