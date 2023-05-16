@@ -43,7 +43,7 @@ const manifest = {
 	app_id: 'ai-app',
 	display_name: "AI Bot",
 	description: "AI Bot",
-	homepage_url: 'https://github.com/chenilim/mattermost-ai-framework/ai-bot',
+	homepage_url: 'https://github.com/mattermost/mattermost-ai-framework/ai-bot',
 	app_type: 'http',
 	icon: 'icon.png',
 	http: {

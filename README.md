@@ -1,6 +1,6 @@
 # Mattermost AI Chat Framework
 
-![Screenshot](https://github.com/chenilim/mattermost-ai-framework/assets/46905241/bbdce0f0-08ba-4934-bf94-6ff55d3cc6e7)
+![Screenshot](https://github.com/mattermost/mattermost-ai-framework/assets/46905241/bbdce0f0-08ba-4934-bf94-6ff55d3cc6e7)
 
 This project demonstrates the ability to run self-hosted AI chat bots in a multi-user chat environment that is fully private and off-grid / air-gapped.
 
