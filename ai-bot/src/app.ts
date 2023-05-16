@@ -51,10 +51,12 @@ const manifest = {
 	},
 	requested_permissions: [
 		'act_as_bot',
+		'act_as_user',
 	],
 	requested_locations: [
 		'/channel_header',
 		'/command',
+		'/post_menu',
 	],
 } as AppManifest
 
@@ -90,6 +92,26 @@ const channelHeaderBindings = {
 	],
 } as AppBinding
 
+const postMenuBindings = {
+	location: '/post_menu',
+	bindings: [
+		{
+			location: 'summarize-post-button',
+			icon: 'icon.png',
+			label: 'Summarize (AI)',
+			submit: {
+				path: '/summarize-post',
+				expand: {
+					acting_user: "all",
+					acting_user_access_token: "all",
+					post: "summary",
+					root_post: "summary",
+				}
+			},
+		},
+	],
+} as AppBinding
+
 const commandBindings = {
 	location: '/command',
 	bindings: [
@@ -117,11 +139,13 @@ app.get('/manifest.json', (req, res) => {
 })
 
 app.post('/bindings', (req, res) => {
+	console.log('/bindings')
 	const callResponse: AppCallResponse<AppBinding[]> = {
 		type: 'ok',
 		data: [
 			channelHeaderBindings,
 			commandBindings,
+			postMenuBindings,
 		],
 	}
 
@@ -153,12 +177,124 @@ app.post('/submit', async (req, res) => {
 		}
 
 		res.json(errorResponse)
+		return
 	}
 
-	const query = formValues.question
-	let output = ''
+	setTimeout(async () => {
+		// Make LLM query
+		const query = formValues.question
 
+		const response = await makeSingleQuery(query)
+		const output = `### ${query}\n\n` + compileResponse(response)
+		console.log(`Serge response: ${output}`)
+
+		const users = [
+			call.context.bot_user_id,
+			call.context.acting_user.id,
+		] as string[]
+
+		let channel: Channel
+		try {
+			channel = await botClient.createDirectChannel(users)
+		} catch (e: any) {
+			res.json({
+				type: 'error',
+				error: 'Failed to create/fetch DM channel: ' + e.message,
+			})
+			return
+		}
+
+		const post = {
+			channel_id: channel.id,
+			message: output,
+		} as Post
+
+		try {
+			await botClient.createPost(post)
+		} catch (e: any) {
+			res.json({
+				type: 'error',
+				error: 'Failed to create post in DM channel: ' + e.message,
+			})
+			return
+		}
+	}, 0)
+
+	const callResponse: AppCallResponse = {
+		type: 'ok',
+		text: `AI is thinking... response will be sent in a DM.`,
+	}
+
+	res.json(callResponse)
+})
+
+app.post('/summarize-post', async (req, res) => {
+	console.log(`/summarize-post:\n${JSON.stringify(req.body, null, 2)}`)
+	const call = req.body as AppCallRequest
+
+	const postId = req.body?.context?.post?.id
+	if (!postId) {
+		console.log(`Missing post id`)
+		const errorResponse: AppCallResponse = {
+			type: 'error',
+			text: `Post id not found in request`,
+		}
+
+		res.json(errorResponse)
+		return
+	}
+
+	const userClient = new Client4()
+	userClient.setUrl(call.context.mattermost_site_url)
+	userClient.setToken(call.context.acting_user_access_token)
+
+	const thread = await userClient.getPostThread(postId)
+	console.log(`thread:\n${JSON.stringify(thread, null, 2)}`)
+
+	let combinedThread = ''
+	for (const threadPostId of thread.order || []) {
+		const post = thread.posts?.[threadPostId]
+		// HACKHACK: Remove # which might confuse the LLM
+		combinedThread += post.message.replaceAll('#', '') + '\n'
+	}
+
+	// Make query to LLM
+	const prompt = 'Write a summary of the following in one short sentence:\n' + combinedThread
 	console.log(`Making query to ${process.env.SERGE_SITEURL}`)
+	console.log(prompt)
+
+	setTimeout(async () => {
+		const response = await makeSingleQuery(prompt)
+
+		// Post response back to thread
+		const botClient = new Client4()
+		botClient.setUrl(call.context.mattermost_site_url)
+		botClient.setToken(call.context.bot_access_token)
+
+		const channelId = req.body?.context?.post?.channel_id
+		const output = `### Summary:\n\n` + compileResponse(response)
+		const summaryPost = {
+			channel_id: channelId,
+			message: output,
+		} as Post
+
+		botClient.createPost(summaryPost)
+		console.log(`Summary post sent with ${wordCount(output)} words.`)
+	}, 0)
+
+	const callResponse: AppCallResponse = {
+		type: 'ok',
+		text: `Summarizing thread...`,
+	}
+
+	res.json(callResponse)
+})
+
+function wordCount(sentence: string): number {
+	return sentence.split(/\s+/).length
+}
+
+async function makeSingleQuery(prompt: string): Promise<string> {
 	const config = new Configuration({
 		basePath: process.env.SERGE_SITEURL + '/api'
 	})
@@ -171,52 +307,13 @@ app.post('/submit', async (req, res) => {
 	console.log(`Created new chat, id: ${chatId}`)
 	const response = await chat.streamAskAQuestionChatChatIdQuestionGet({
 		chatId,
-		prompt: query
+		prompt
 	})
-
-	output = `### ${query}\n\n` + compileResponse(response)
-	console.log(`Serge response: ${output}`)
 
 	await chat.deleteChatChatChatIdDelete({ chatId })
 
-	const users = [
-		call.context.bot_user_id,
-		call.context.acting_user.id,
-	] as string[]
-
-	let channel: Channel
-	try {
-		channel = await botClient.createDirectChannel(users)
-	} catch (e: any) {
-		res.json({
-			type: 'error',
-			error: 'Failed to create/fetch DM channel: ' + e.message,
-		})
-		return
-	}
-
-	const post = {
-		channel_id: channel.id,
-		message: output,
-	} as Post
-
-	try {
-		await botClient.createPost(post)
-	} catch (e: any) {
-		res.json({
-			type: 'error',
-			error: 'Failed to create post in DM channel: ' + e.message,
-		})
-		return
-	}
-
-	const callResponse: AppCallResponse = {
-		type: 'ok',
-		text: `I've responded as a DM to you`,
-	}
-
-	res.json(callResponse)
-})
+	return response
+}
 
 function compileResponse(response: string): string {
 	// This is hokey code to compile an event stream into a single response string
