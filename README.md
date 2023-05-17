@@ -23,7 +23,7 @@
 
 ## Background
 
-This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped.
+This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop). 
 
 This framework uses a locally-deployed [Mattermost](https://mattermost.com/) app to interface with a variety of LLM AIs. It currently supports local LLMs hosted via [Serge](https://github.com/nsarrazin/serge), a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) that can run LLMs without a GPU.
 
@@ -96,7 +96,7 @@ To summarize threads, first grant the bot account access to public channels:
 2. Select **Bot Accounts** then **Edit** for `ai-bot`
 3. Check the box for **post:channels** (*Bot will have access to post to all Mattermost public channels*)
 
-Now, open the message app menu button (4 squares) on any post in a public channel and select **Summarize (AI)**.
+Now, open the message app menu button (4 squares) on any post in a public channel and select **Summarize (AI)**. You can watch a brief demo of this functionality [here](https://community.mattermost.com/files/k4gdq47njfg6uxuzr5toq5eb4a/public?h=_Lu6LPIGENzL15vfKYSw3AId2yKSGAGySMH9nCRBr24). 
 
 |                                           Message app menu button                                           |                                                  Response                                                   |
 | :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
