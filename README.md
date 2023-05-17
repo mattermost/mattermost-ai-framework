@@ -80,13 +80,14 @@ You're now ready to use the example `ai-bot`! 🎉
 
 ### Ask a question
 
-In any channel, you can now ask `ai-bot` questions. For example:
+In any channel, you can now ask `ai-bot` questions with the `/ai ask` slash command. For example:
  * `/ai ask "Write a haiku about perseverance"`
  * `/ai ask "What is the weather right now in Glasgow?"`
  * `/ai ask "When were pterodactyls alive?"`
 
-![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/7b6913d1-09a4-44d7-8908-5634d2d7d8db)
-![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/bdf6f0f4-3d3d-4e76-8adb-0c01fe5b63c3)
+|                                                Slash command                                                |                                                  Response                                                   |
+| :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+| ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/6f90923e-e8c0-4ac5-9134-cc1e0d69b78e) | ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/bdf6f0f4-3d3d-4e76-8adb-0c01fe5b63c3) |
 
 ### Summarize thread
 
@@ -97,8 +98,9 @@ To summarize threads, first grant the bot account access to public channels:
 
 Now, open the message app menu button (4 squares) on any post in a public channel and select **Summarize (AI)**.
 
-![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/0d048925-37b0-47dd-84c0-e7c76ba2cffc)
-![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/019f7e59-23df-4cc5-9268-37677b32837a)
+|                                           Message app menu button                                           |                                                  Response                                                   |
+| :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
+| ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/0d048925-37b0-47dd-84c0-e7c76ba2cffc) | ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/019f7e59-23df-4cc5-9268-37677b32837a) |
 
 ## Related Efforts
 
