@@ -1,8 +1,12 @@
 tasks:
-  - command: |
-      cd mattermost && docker compose up -d && ..
-      cd serge && docker compose up -d & ..
-      cd ai-bot && docker compose up -d
+  - name: init mattermost
+    command: cd mattermost && docker compose up -d
+
+  - name: init serge
+    command: cd ../serge && docker compose up -d
+
+  - name: init ai-bot
+    command: cd ../ai-bot && docker compose up -d
 ports:
   - port: 8080
     onOpen: open-preview
