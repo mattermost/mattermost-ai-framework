@@ -1,6 +1,6 @@
 tasks:
   - name: mattermost
-    command: export MMSITEURL=$(gp url 8065) && sed -i "s@http://mattermost:8065@$MMSITEURL@" docker-compose.yml && docker compose up -d && sh init.sh
+    command: export MMSITEURL=$(gp url 8065) && sed -i "s@MM_SERVICESETTINGS_SITEURL: \"http://mattermost:8065\"@MM_SERVICESETTINGS_SITEURL: \"$MMSITEURL\"@" docker-compose.yml && docker compose up -d && sh init.sh
 ports:
   - name: mattermost
     port: 8065
