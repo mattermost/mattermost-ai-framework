@@ -197,10 +197,7 @@ app.post('/submit', async (req, res) => {
 		try {
 			channel = await botClient.createDirectChannel(users)
 		} catch (e: any) {
-			res.json({
-				type: 'error',
-				error: 'Failed to create/fetch DM channel: ' + e.message,
-			})
+			console.error('Failed to create/fetch DM channel: ' + e.message)
 			return
 		}
 
@@ -212,10 +209,7 @@ app.post('/submit', async (req, res) => {
 		try {
 			await botClient.createPost(post)
 		} catch (e: any) {
-			res.json({
-				type: 'error',
-				error: 'Failed to create post in DM channel: ' + e.message,
-			})
+			console.error('Failed to create post in DM channel: ' + e.message)
 			return
 		}
 	}, 0)
@@ -363,7 +357,11 @@ async function init() {
 		model = process.env.SERGE_MODEL
 		console.log(`Using model from SERGE_MODEL: ${model}`)
 	} else {
-		model = await getModel()
+		try {
+			model = await getModel()
+		} catch (e: any) {
+			console.error('Unable to get model, error: ' + e.message)
+		}
 	}
 }
 
