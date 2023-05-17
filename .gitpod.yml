@@ -1,0 +1,13 @@
+tasks:
+  - name: mattermost
+    command: export MMSITEURL=$(gp url 8065) && sed -i "s@http://mattermost:8065@$MMSITEURL@" docker-compose.yml && docker compose up -d && sh init.sh
+ports:
+  - name: mattermost
+    port: 8065
+    onOpen: open-browser
+  - name: serge
+    port: 8008
+    onOpen: open-browser
+  - name: ai-bot
+    port: 9000
+    onOpen: ignore

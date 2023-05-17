@@ -3,15 +3,43 @@ networks:
   default:
     name: "mattermost-apps-dev"
 services:
+  serge:
+    container_name: serge
+    image: "ghcr.io/nsarrazin/serge:latest"
+    restart: "unless-stopped"
+    volumes:
+      - "./serge/datadbdb:/data/db"
+      - "./serge/weights:/usr/src/app/weights"
+      - "/etc/localtime:/etc/localtime:ro"
+    ports:
+      - "8008:8008"
+  mattermost-apps-ai-bot:
+    container_name: ai-bot
+    image: "node:lts-gallium"
+    restart: "unless-stopped"
+    depends_on:
+      - "serge"
+    working_dir: "/app"
+    ports:
+      - "9000:9000"
+    environment:
+      MATTERMOST_SITEURL: "http://mattermost:8065"
+      SERGE_SITEURL: "http://serge:8008"
+      APP_HOST: "mattermost-apps-ai-bot" # Same as the service's network name
+      APP_PORT: 9000
+    volumes:
+      - "./ai-bot:/app"
+    command: "bash -c 'npm i && npm start'"
   mattermost:
-    image: "mattermost/mattermost-enterprise-edition:7.5.0" # https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags
+    container_name: mattermost
+    image: "mattermost/mattermost-enterprise-edition:7.9.0"
     restart: "unless-stopped"
     depends_on:
       - "db"
     ports:
       - "8065:8065"
     env_file:
-      - ".docker.env"
+      - "./mattermost/.docker.env"
     environment:
       MM_SQLSETTINGS_DRIVERNAME: "postgres"
       MM_SQLSETTINGS_DATASOURCE: "postgres://mmuser:mostest@db/mattermost_test?sslmode=disable\u0026connect_timeout=10"
@@ -24,14 +52,17 @@ services:
       MM_SERVICESETTINGS_ENABLETESTING: "true"
       MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS: "true"
       MM_EXPERIMENTALSETTINGS_ENABLEAPPBAR: "true"
+      MM_EXPERIMENTALSETTINGS_ENABLETUTORIAL: "false"
+      MM_EXPERIMENTALSETTINGS_ENABLEONBOARDING: "false"
       MM_PLUGINSETTINGS_ENABLEUPLOADS: "true"
       MM_LOGSETTINGS_CONSOLELEVEL: "DEBUG"
       MM_LOGSETTINGS_FILELEVEL: "DEBUG"
+      MM_SERVICESETTINGS_ENABLELOCALMODE: "true"
       MM_FILESETTINGS_MAXFILESIZE: 123524266
       MM_FEATUREFLAGS_AppsEnabled: "true"
-      MM_FEATUREFLAGS_PluginApps: "1.2.0" # https://github.com/mattermost/mattermost-plugin-apps/releases
+      MM_FEATUREFLAGS_PluginApps: "1.2.0"
     volumes:
-      - "./mm-logs:/mattermost/logs:rw"
+      - "./mattermost/mm-logs:/mattermost/logs:rw"
   db:
     image: "postgres"
     restart: "unless-stopped"
