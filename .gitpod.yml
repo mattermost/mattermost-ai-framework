@@ -8,9 +8,9 @@ tasks:
   - name: init ai-bot
     command: cd ai-bot && docker compose up -d
 ports:
-  - port: 8080
-    onOpen: open-preview
-    visibility: public
-  - port: 8065
-    visibility: public
-    onOpen: open-preview
+  - name: mattermost
+    port: 8065
+    onOpen: open-browser
+  - name: serge
+    port: 8080
+    onOpen: open-browser
