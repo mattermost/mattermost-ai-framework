@@ -8,12 +8,13 @@ services:
     image: "ghcr.io/nsarrazin/serge:latest"
     restart: "unless-stopped"
     volumes:
-      - "datadb:/data/db"
-      - "weights:/usr/src/app/weights/"
+      - "./serge/datadbdb:/data/db"
+      - "./serge/weights:/usr/src/app/weights"
       - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "8008:8008"
   mattermost-apps-ai-bot:
+    container_name: ai-bot
     image: "node:lts-gallium"
     restart: "unless-stopped"
     depends_on:
@@ -38,7 +39,7 @@ services:
     ports:
       - "8065:8065"
     env_file:
-      - ".docker.env"
+      - "./mattermost/.docker.env"
     environment:
       MM_SQLSETTINGS_DRIVERNAME: "postgres"
       MM_SQLSETTINGS_DATASOURCE: "postgres://mmuser:mostest@db/mattermost_test?sslmode=disable\u0026connect_timeout=10"
@@ -69,6 +70,3 @@ services:
       POSTGRES_PASSWORD: "mostest"
       POSTGRES_USER: "mmuser"
       POSTGRES_DB: "mattermost_test"
-volumes:
-  datadb:
-  weights:
