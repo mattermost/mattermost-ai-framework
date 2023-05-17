@@ -4,6 +4,7 @@ networks:
     name: "mattermost-apps-dev"
 services:
   serge:
+    container_name: serge
     image: "ghcr.io/nsarrazin/serge:latest"
     restart: on-failure
     volumes:

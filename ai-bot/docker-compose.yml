@@ -4,6 +4,7 @@ networks:
     name: "mattermost-apps-dev"
 services:
   mattermost-apps-ai-bot:
+    container_name: ai-bot
     image: "node:lts-gallium"
     restart: "unless-stopped"
     working_dir: "/app"

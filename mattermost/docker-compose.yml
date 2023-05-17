@@ -4,6 +4,7 @@ networks:
     name: "mattermost-apps-dev"
 services:
   mattermost:
+    container_name: mattermost
     image: "mattermost/mattermost-enterprise-edition:7.5.0" # https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags
     restart: "unless-stopped"
     depends_on:
