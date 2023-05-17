@@ -13,7 +13,7 @@ services:
     environment:
       MATTERMOST_SITEURL: "http://mattermost:8065"
       SERGE_SITEURL: "http://serge:8008"
-      APP_HOST: "mattermost-apps-ai-bot" # Same as the service's network name
+      APP_HOST: "ai-bot" # Same as the service's network name
       APP_PORT: 9000
     volumes:
       - "./:/app"
