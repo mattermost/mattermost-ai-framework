@@ -1,7 +1,7 @@
 {
-  "name": "mattermost-apps-typescript-hello-world",
-  "version": "1.0.0",
-  "description": "Example TypeScript app for Mattermost",
+  "name": "mattermost-ai-framework",
+  "version": "0.1.0",
+  "description": "Example AI app framework for Mattermost",
   "scripts": {
     "start": "nodemon",
     "dist": "tsc -p ."

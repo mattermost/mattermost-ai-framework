@@ -23,7 +23,7 @@ services:
     ports:
       - "9000:9000"
     environment:
-      MATTERMOST_SITEURL: "__GPSITEURL__"
+      MATTERMOST_SITEURL: "http://mattermost:8065"
       SERGE_SITEURL: "http://serge:8008"
       APP_HOST: "mattermost-apps-ai-bot" # Same as the service's network name
       APP_PORT: 9000
@@ -32,7 +32,7 @@ services:
     command: "bash -c 'npm i && npm start'"
   mattermost:
     container_name: mattermost
-    image: "mattermost/mattermost-enterprise-edition:7.5.0" # https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags
+    image: "mattermost/mattermost-enterprise-edition:7.9.0"
     restart: "unless-stopped"
     depends_on:
       - "db"
@@ -44,7 +44,7 @@ services:
       MM_SQLSETTINGS_DRIVERNAME: "postgres"
       MM_SQLSETTINGS_DATASOURCE: "postgres://mmuser:mostest@db/mattermost_test?sslmode=disable\u0026connect_timeout=10"
       MM_SERVICESETTINGS_LISTENADDRESS: ":8065"
-      MM_SERVICESETTINGS_SITEURL: __GPSITEURL__
+      MM_SERVICESETTINGS_SITEURL: "http://mattermost:8065"
       MM_SERVICESETTINGS_ENABLEBOTACCOUNTCREATION: "true"
       MM_SERVICESETTINGS_ENABLEUSERACCESSTOKENS: "true"
       MM_SERVICESETTINGS_ENABLEOAUTHSERVICEPROVIDER: "true"
@@ -60,7 +60,7 @@ services:
       MM_SERVICESETTINGS_ENABLELOCALMODE: "true"
       MM_FILESETTINGS_MAXFILESIZE: 123524266
       MM_FEATUREFLAGS_AppsEnabled: "true"
-      MM_FEATUREFLAGS_PluginApps: "1.2.0" # https://github.com/mattermost/mattermost-plugin-apps/releases
+      MM_FEATUREFLAGS_PluginApps: "1.2.0"
     volumes:
       - "./mattermost/mm-logs:/mattermost/logs:rw"
   db:
