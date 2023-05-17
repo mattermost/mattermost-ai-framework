@@ -23,7 +23,7 @@
 
 ## Background
 
-This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop). 
+This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop).
 
 This framework uses a locally-deployed [Mattermost](https://mattermost.com/) app to interface with a variety of LLM AIs. It currently supports local LLMs hosted via [Serge](https://github.com/nsarrazin/serge), a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) that can run LLMs without a GPU.
 
@@ -41,7 +41,7 @@ This framework consists of three local components:
 You will need [Docker](https://docs.docker.com/get-docker/) installed with `compose`. This repository should work on a 16GB M1 Macbook.
 
 1. Clone and enter this repository:
-  * `git clone https://github.com/azigler/mattermost-ai-framework && cd mattermost-ai-framework`
+  * `git clone https://github.com/mattermost/mattermost-ai-framework && cd mattermost-ai-framework`
 2. Start the services: `docker compose up -d`
 3. Download a Serge model (e.g., GPT4All):
   * Open Serge at `http://localhost:8008`
@@ -59,7 +59,7 @@ You will need [Docker](https://docs.docker.com/get-docker/) installed with `comp
 
 ### Gitpod
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/azigler/mattermost-ai-framework)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/mattermost/mattermost-ai-framework)
 
 1. Select the above badge to start your Gitpod workspace
 2. The workspace will configure itself automatically. Wait for the services to start and for your `root` login for Mattermost to be generated in the terminal
@@ -96,7 +96,7 @@ To summarize threads, first grant the bot account access to public channels:
 2. Select **Bot Accounts** then **Edit** for `ai-bot`
 3. Check the box for **post:channels** (*Bot will have access to post to all Mattermost public channels*)
 
-Now, open the message app menu button (4 squares) on any post in a public channel and select **Summarize (AI)**. You can watch a brief demo of this functionality [here](https://community.mattermost.com/files/k4gdq47njfg6uxuzr5toq5eb4a/public?h=_Lu6LPIGENzL15vfKYSw3AId2yKSGAGySMH9nCRBr24). 
+Now, open the message app menu button (4 squares) on any post in a public channel and select **Summarize (AI)**. You can watch a brief demo of this functionality [here](https://community.mattermost.com/files/k4gdq47njfg6uxuzr5toq5eb4a/public?h=_Lu6LPIGENzL15vfKYSw3AId2yKSGAGySMH9nCRBr24).
 
 |                                           Message app menu button                                           |                                                  Response                                                   |
 | :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
