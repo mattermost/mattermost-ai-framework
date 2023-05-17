@@ -1,12 +1,6 @@
 tasks:
-  - name: init mattermost
-    command: cd mattermost && export GPSITEURL=$(gp url 8065) && sed -i "s@__GPSITEURL__@$GPSITEURL@" docker-compose.yml && docker compose up -d && sh init.sh
-
-  - name: init serge
-    command: cd serge && docker compose up -d
-
-  - name: init ai-bot
-    command: cd ai-bot && docker compose up -d
+  - name: mattermost
+    command: export GPSITEURL=$(gp url 8065) && sed -i "s@__GPSITEURL__@$GPSITEURL@" docker-compose.yml && docker compose up -d && sh init.sh
 ports:
   - name: mattermost
     port: 8065
