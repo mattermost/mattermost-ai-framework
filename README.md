@@ -31,7 +31,7 @@ Pre-reqs: [Docker](https://docs.docker.com/get-docker/).
   * Download `GPT4All`
 6. Open Mattermost on `http://localhost:8065` and set up an account
   * View in the browser and set up a default team
-7. Install the AI-Bot app by running the following slash command in Mattermost: `/apps install http http://ai-bot:9000/manifest.json`
+7. Install the AI-Bot app by running the following slash command in Mattermost: `/apps install http http://mattermost-apps-ai-bot:9000/manifest.json`
   * Accept the permissions and click "Submit" in the dialog
 8. You can now ask the bot questions, e.g. `/ai ask "Write a haiku about perseverance"`
 

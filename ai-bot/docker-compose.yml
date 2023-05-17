@@ -4,7 +4,6 @@ networks:
     name: "mattermost-apps-dev"
 services:
   mattermost-apps-ai-bot:
-    container_name: ai-bot
     image: "node:lts-gallium"
     restart: "unless-stopped"
     working_dir: "/app"
@@ -13,7 +12,7 @@ services:
     environment:
       MATTERMOST_SITEURL: "http://mattermost:8065"
       SERGE_SITEURL: "http://serge:8008"
-      APP_HOST: "ai-bot" # Same as the service's network name
+      APP_HOST: "mattermost-apps-ai-bot" # Same as the service's network name
       APP_PORT: 9000
     volumes:
       - "./:/app"
