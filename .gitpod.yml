@@ -1,6 +1,6 @@
 tasks:
   - name: init mattermost
-    command: cd mattermost && docker compose up -d
+    command: cd mattermost && docker compose up -d && sh init.sh
 
   - name: init serge
     command: cd serge && docker compose up -d

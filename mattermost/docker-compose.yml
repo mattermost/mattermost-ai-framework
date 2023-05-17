@@ -27,6 +27,7 @@ services:
       MM_PLUGINSETTINGS_ENABLEUPLOADS: "true"
       MM_LOGSETTINGS_CONSOLELEVEL: "DEBUG"
       MM_LOGSETTINGS_FILELEVEL: "DEBUG"
+      MM_SERVICESETTINGS_ENABLELOCALMODE: "true"
       MM_FILESETTINGS_MAXFILESIZE: 123524266
       MM_FEATUREFLAGS_AppsEnabled: "true"
       MM_FEATUREFLAGS_PluginApps: "1.2.0" # https://github.com/mattermost/mattermost-plugin-apps/releases
