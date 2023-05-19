@@ -23,7 +23,10 @@
 
 ## Background
 
-This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop).
+**🚀 Join the ["AI Exchange" channel](https://community.mattermost.com/core/channels/ai-exchange) where Mattermost's open source community is sharing AI news and innovation in real time!**
+
+This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop). 
+>>>>>>> Stashed changes
 
 This framework uses a locally-deployed [Mattermost](https://mattermost.com/) app to interface with a variety of LLM AIs. It currently supports local LLMs hosted via [Serge](https://github.com/nsarrazin/serge), a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) that can run LLMs without a GPU.
 
@@ -82,12 +85,12 @@ You're now ready to use the example `ai-bot`! 🎉
 
 In any channel, you can now ask `ai-bot` questions with the `/ai ask` slash command. For example:
  * `/ai ask "Write a haiku about perseverance"`
- * `/ai ask "What is the weather right now in Glasgow?"`
+ * `/ai ask "Why is open source important?"`
  * `/ai ask "When were pterodactyls alive?"`
 
-|                                                Slash command                                                |                                                  Response                                                   |
-| :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
-| ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/6f90923e-e8c0-4ac5-9134-cc1e0d69b78e) | ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/bdf6f0f4-3d3d-4e76-8adb-0c01fe5b63c3) |
+|                                                        Slash command                                                         |                                                           Response                                                            |
+| :--------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+| ![Asking a question](https://github.com/azigler/mattermost-ai-framework/assets/7295363/6f90923e-e8c0-4ac5-9134-cc1e0d69b78e) | ![Getting a response](https://github.com/azigler/mattermost-ai-framework/assets/7295363/bdf6f0f4-3d3d-4e76-8adb-0c01fe5b63c3) |
 
 ### Summarize thread
 
@@ -98,9 +101,9 @@ To summarize threads, first grant the bot account access to public channels:
 
 Now, open the message app menu button (4 squares) on any post in a public channel and select **Summarize (AI)**. You can watch a brief demo of this functionality [here](https://community.mattermost.com/files/k4gdq47njfg6uxuzr5toq5eb4a/public?h=_Lu6LPIGENzL15vfKYSw3AId2yKSGAGySMH9nCRBr24).
 
-|                                           Message app menu button                                           |                                                  Response                                                   |
-| :---------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: |
-| ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/0d048925-37b0-47dd-84c0-e7c76ba2cffc) | ![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/019f7e59-23df-4cc5-9268-37677b32837a) |
+|                                                        Message app menu button                                                         |                                                            Response                                                            |
+| :------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
+| ![Requesting a thread summary](https://github.com/azigler/mattermost-ai-framework/assets/7295363/0d048925-37b0-47dd-84c0-e7c76ba2cffc) | ![Getting the summary](https://github.com/azigler/mattermost-ai-framework/assets/7295363/019f7e59-23df-4cc5-9268-37677b32837a) |
 
 ## Related Efforts
 
@@ -114,7 +117,9 @@ The current stage is an early proof-of-concept. There are several directions thi
 Explore Mattermost's AI initiatives:
 
 * https://docs.mattermost.com/about/mattermost-customizable-chatgpt-bot-framework.html
+* https://community.mattermost.com/core/channels/ask-chatgpt
 * https://mattermost.com/add-chatgpt-to-mattermost/
+* https://github.com/crspeller/mattermost-plugin-summarize/
 * https://github.com/Brightscout/mattermost-plugin-openai
 * https://github.com/yGuy/chatgpt-mattermost-bot
 
