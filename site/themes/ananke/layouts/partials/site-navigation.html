@@ -4,7 +4,7 @@
       {{ with .Site.Params.site_logo }}
         <img src="{{ relURL . }}" class="w100 mw5-ns" alt="{{ $.Site.Title }}" />
       {{ else }}
-        {{ .Site.Title }}
+      <img src="/logo.svg" alt="Mattermost AI Logo" width='240px'>
       {{ end }}
     </a>
     <div class="flex-l items-center">

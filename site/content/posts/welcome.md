@@ -1,10 +1,8 @@
 ---
-title: "My First Post"
+title: "Welcome to the Mattermost AI Framework Mini-Site"
 date: 2023-05-23T11:31:04+05:00
 draft: false
 ---
-
-# Welcome to the Mattermost AI Framework Mini-Site
 
 When an open source project is new, we need speed, simplicity and systems for feedback and iteration,
 

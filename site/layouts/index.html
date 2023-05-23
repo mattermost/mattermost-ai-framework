@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
+    </head>
+
+    <body>
+        {{ block "main" . }}
+        <!-- The part of the page that begins to differ between templates -->
+            {{ range first 1 .Site.RegularPages }}
+              <div>{{ .Render "single" }}</div>
+            {{ end }}
+        {{ end }}
+    </body>
+</html>
