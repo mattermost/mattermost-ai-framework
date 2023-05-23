@@ -1,0 +1,35 @@
+body {
+    background: radial-gradient(67.68% 67.68% at 50% -14.74%, #20252F 0%, #141414 100%), url(/intro-bg.png);
+}
+
+.top-grid {
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+header {
+    padding-top: 40px;
+}
+
+.f1 {
+    font-family: 'Helvetica', Roboto, sans-serif !important;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+main {
+    z-index: 5;
+    position: relative;
+}
