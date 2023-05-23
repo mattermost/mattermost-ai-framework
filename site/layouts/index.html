@@ -6,6 +6,9 @@
     </head>
 
     <body>
+        <div class="top-grid">
+          <img src="/grid.png" alt="">
+        </div>
         {{ block "main" . }}
         <!-- The part of the page that begins to differ between templates -->
             {{ range first 1 .Site.RegularPages }}

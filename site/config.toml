@@ -2,3 +2,7 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Mattermost AI Framework'
 theme = 'ananke'
+[params]
+  body_classes = "avenir light-gray bg-transparent"
+  post_content_classes = "avenir light-gray bg-transparent"
+  background_color_class = 'bg-transparent'
