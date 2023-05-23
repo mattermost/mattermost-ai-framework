@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/asaadmahmood/Git/mattermost-ai-framework/site",
+	"sourceRoot": "/Users/asaadmahmood/Git/mattermost-ai-framework/docs",
 	"sources": [
 		"ananke/css/main.css"
 	],
