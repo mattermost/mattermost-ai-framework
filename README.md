@@ -4,7 +4,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-![Screenshot](https://github.com/mattermost/mattermost-ai-framework/assets/46905241/bbdce0f0-08ba-4934-bf94-6ff55d3cc6e7)
+![mattermist ai](./banner.png "Mattermost AI Preview")
 
 ## Table of Contents
 
