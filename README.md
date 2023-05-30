@@ -38,9 +38,7 @@ This framework consists of three local components:
 
 ## Install
 
-| Tutorial video |
-|:---:|
-| [![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/b0bbc580-0f69-4dc4-b74b-bbdf5edd1303)](https://www.youtube.com/watch?v=h7vHwVabPQc) |
+[![](https://markdown-videos.deta.dev/youtube/h7vHwVabPQc)](https://youtu.be/h7vHwVabPQc)
 
 ### Local
 
