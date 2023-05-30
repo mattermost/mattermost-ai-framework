@@ -38,6 +38,10 @@ This framework consists of three local components:
 
 ## Install
 
+| Tutorial video |
+|:---:|
+| [![](https://github.com/azigler/mattermost-ai-framework/assets/7295363/b0bbc580-0f69-4dc4-b74b-bbdf5edd1303)](https://www.youtube.com/watch?v=h7vHwVabPQc) |
+
 ### Local
 
 You will need [Docker](https://docs.docker.com/get-docker/) installed with `compose`. This repository should work on a 16GB M1 Macbook.
