@@ -23,10 +23,9 @@
 
 ## Background
 
-**🚀 Join the ["AI Exchange" channel](https://community.mattermost.com/core/channels/ai-exchange) where Mattermost's open source community is sharing AI news and innovation in real time!**
+**🚀 Check out [our AI developer website](https://mattermost.github.io/mattermost-ai-site/), join the ["AI Exchange" channel](https://community.mattermost.com/core/channels/ai-exchange), and explore the [peer-to-peer forums](https://forum.mattermost.com/c/ai-frameworks/40) where Mattermost's open source community is sharing AI news and innovation in real time!**
 
 This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop). 
->>>>>>> Stashed changes
 
 This framework uses a locally-deployed [Mattermost](https://mattermost.com/) app to interface with a variety of LLM AIs. It currently supports local LLMs hosted via [Serge](https://github.com/nsarrazin/serge), a wrapper around [llama.cpp](https://github.com/ggerganov/llama.cpp) that can run LLMs without a GPU.
 
@@ -38,6 +37,8 @@ This framework consists of three local components:
 `ai-bot` routes communicaiton between the Mattermost and Serge servers via a REST API.
 
 ## Install
+
+[![](https://markdown-videos.deta.dev/youtube/h7vHwVabPQc)](https://youtu.be/h7vHwVabPQc)
 
 ### Local
 
@@ -116,8 +117,10 @@ The current stage is an early proof-of-concept. There are several directions thi
 
 Explore Mattermost's AI initiatives:
 
-* https://docs.mattermost.com/about/mattermost-customizable-chatgpt-bot-framework.html
+* https://ai.mattermost.com
 * https://community.mattermost.com/core/channels/ask-chatgpt
+* https://forum.mattermost.com/c/ai-frameworks/40
+* https://docs.mattermost.com/about/mattermost-customizable-chatgpt-bot-framework.html
 * https://mattermost.com/add-chatgpt-to-mattermost/
 * https://github.com/crspeller/mattermost-plugin-summarize/
 * https://github.com/Brightscout/mattermost-plugin-openai
