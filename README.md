@@ -17,8 +17,9 @@ The Mattermost AI framework offers an open source, self-managed solution for str
 * **Conforming security and compliance platform** that can accommodate a broad range of custom security and compliance requirements. With a fully open source and transparent stack, enterprises can scan and evaluate any portion of this platform as well as monitor and secure all incoming and outgoing network traffic as well as deploy to restricted networks.
 
 Example: Watch a minute-long demo for discussion summarization using a fully open source, self-hosted AI/LLM platform: 
+https://github.com/mattermost/mattermost-ai-framework/assets/11034289/4810844a-ae9a-4a67-bad1-d53616830ab9
 
-[![image](https://github.com/mattermost/mattermost-ai-framework/assets/177788/1dbe51fa-fb6c-411f-9e18-4e2c99d4c2f2)](https://community.mattermost.com/files/k4gdq47njfg6uxuzr5toq5eb4a/public?h=_Lu6LPIGENzL15vfKYSw3AId2yKSGAGySMH9nCRBr24)
+
 
 
 ## Table of Contents
