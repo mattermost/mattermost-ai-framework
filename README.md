@@ -4,19 +4,22 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-![mattermist ai](./banner.png "Mattermost AI Preview")
+The Mattermost AI framework offers an open source, self-managed solution for strict security organizations to explore generative AI enhancements while maintaining full data control, and avoiding lock-in to vendor platforms. Benefits include: 
 
-The Mattermost AI framework offers an open source, self-managed solution for strict security organizations to explore Generative AI enhancements while maintaining full data control, and avoiding lock-in to vendor platforms. 
+* **Fully-featured chat-based collaboration** including 1-1 and group messaging across, web, desktop and mobile, with file and media sharing, search, integrations, custom emojis and emoji reactions, syntax highlighting and custom rendering.
 
-Benefits include: 
+* **Conversational AI bot** that can add an AI bot to channels where it can be engaged like human users to respond to questions and requests based on different LLMs that can be downloaded and run as part of the framework, including models from the HuggingFace AI community. 
 
-**Fully-featured chat-based collaboration** including 1-1 and group messaging across, web, desktop and mobile, with file and media sharing, search, integrations, custom emojis and emoji reactions, syntax highlighting and custom rendering.
+* **Discussion Summarization** with the ability to produce a concise summary of threaded discussions using LLM models without any data leaving the self-hosted system. 
 
-**Conversational AI bot** that can add an AI bot to channels where it can be engaged like human users to respond to questions and requests based on different LLMs that can be downloaded and run as part of the framework, including models from the HuggingFace AI community. 
+* **Scalable AI model framework** that can scale up to deploy on a private cloud or data center using large and powerful open source LLM models for group work, or scale down to run on a commodity laptop, without the need for specialized hardware required by typical AI models, for individual developers to prototype and explore LLM capabilities.
 
-**Scalable AI model framework** that can scale up to deploy on a private cloud or data center using large and powerful open source LLM models for group work, or scale down to run on a commodity laptop, without the need for specialized hardware required by typical AI models, for individual developers to prototype and explore LLM capabilities.
+* **Conforming security and compliance platform** that can accommodate a broad range of custom security and compliance requirements. With a fully open source and transparent stack, enterprises can scan and evaluate any portion of this platform as well as monitor and secure all incoming and outgoing network traffic as well as deploy to restricted networks.
 
-**Conforming security and compliance platform** that can accommodate a broad range of custom security and compliance requirements. With a fully open source and transparent stack, enterprises can scan and evaluate any portion of this platform as well as monitor and secure all incoming and outgoing network traffic as well as deploy to restricted networks.
+Example: Watch a minute-long demo for discussion summarization using a fully open source, self-hosted AI/LLM platform: 
+
+[![image](https://github.com/mattermost/mattermost-ai-framework/assets/177788/1dbe51fa-fb6c-411f-9e18-4e2c99d4c2f2)](https://community.mattermost.com/files/k4gdq47njfg6uxuzr5toq5eb4a/public?h=_Lu6LPIGENzL15vfKYSw3AId2yKSGAGySMH9nCRBr24)
+
 
 ## Table of Contents
 
