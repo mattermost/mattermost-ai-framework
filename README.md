@@ -6,6 +6,18 @@
 
 ![mattermist ai](./banner.png "Mattermost AI Preview")
 
+The Mattermost AI framework offers an open source, self-managed solution for strict security organizations to explore Generative AI enhancements while maintaining full data control, and avoiding lock-in to vendor platforms. 
+
+Benefits include: 
+
+**Fully-featured chat-based collaboration** including 1-1 and group messaging across, web, desktop and mobile, with file and media sharing, search, integrations, custom emojis and emoji reactions, syntax highlighting and custom rendering.
+
+**Conversational AI bot** that can add an AI bot to channels where it can be engaged like human users to respond to questions and requests based on different LLMs that can be downloaded and run as part of the framework, including models from the HuggingFace AI community. 
+
+**Scalable AI model framework** that can scale up to deploy on a private cloud or data center using large and powerful open source LLM models for group work, or scale down to run on a commodity laptop, without the need for specialized hardware required by typical AI models, for individual developers to prototype and explore LLM capabilities.
+
+**Conforming security and compliance platform** that can accommodate a broad range of custom security and compliance requirements. With a fully open source and transparent stack, enterprises can scan and evaluate any portion of this platform as well as monitor and secure all incoming and outgoing network traffic as well as deploy to restricted networks.
+
 ## Table of Contents
 
 - [Mattermost AI Framework](#mattermost-ai-framework)
