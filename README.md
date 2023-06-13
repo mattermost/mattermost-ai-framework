@@ -40,7 +40,7 @@ Example: Watch a minute-long demo for discussion summarization using a fully ope
 
 ## Background
 
-**🚀 Check out [our AI developer website](https://mattermost.github.io/mattermost-ai-site/), join the ["AI Exchange" channel](https://community.mattermost.com/core/channels/ai-exchange), and explore the [peer-to-peer forums](https://forum.mattermost.com/c/ai-frameworks/40) where Mattermost's open source community is sharing AI news and innovation in real time!**
+**🚀 Join [Mattermost's AI discussion forums](https://forum.mattermost.com/c/ai-frameworks/40) where Mattermost's open source community is sharing the latest AI resources and innovations!**
 
 This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop). 
 
@@ -125,23 +125,7 @@ Now, open the message app menu button (4 squares) on any post in a public channe
 
 ## Related Efforts
 
-The current stage is an early proof-of-concept. There are several directions this could go in, including:
-
-* Support for other AI/LLM services
-* Additional bot capabilities
-* Improved model handling
-* Better UX
-
-Explore Mattermost's AI initiatives:
-
-* https://ai.mattermost.com
-* https://community.mattermost.com/core/channels/ask-chatgpt
-* https://forum.mattermost.com/c/ai-frameworks/40
-* https://docs.mattermost.com/about/mattermost-customizable-chatgpt-bot-framework.html
-* https://mattermost.com/add-chatgpt-to-mattermost/
-* https://github.com/crspeller/mattermost-plugin-summarize/
-* https://github.com/Brightscout/mattermost-plugin-openai
-* https://github.com/yGuy/chatgpt-mattermost-bot
+Explore Mattermost's AI initiatives via the ["Welcome to Mattermost’s AI Community"](https://forum.mattermost.com/t/welcome-to-mattermosts-ai-community/16144?u=zigler) thread in the [AI forums](https://forum.mattermost.com/c/ai-frameworks/40).
 
 ## Contributing
 
