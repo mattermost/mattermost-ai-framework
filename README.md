@@ -55,7 +55,8 @@ This framework consists of three local components:
 
 ## Install
 
-[![](https://markdown-videos.deta.dev/youtube/h7vHwVabPQc)](https://youtu.be/h7vHwVabPQc)
+Check out this tutorial video to get started: https://youtu.be/h7vHwVabPQc
+<img width="1263" alt="image" src="https://github.com/mattermost/mattermost-ai-framework/assets/7295363/5d22c44d-7778-4092-8557-6d1bae7fcf8e">
 
 ### Local
 
