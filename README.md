@@ -1,4 +1,8 @@
-# Mattermost AI Framework
+---
+# Please check out [OpenOps](https://openops.mattermost.com/), which is the new framework for open source AI-enhanced collaboration with Mattermost.
+---
+
+# Mattermost AI Framework (Deprecated)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/mattermost/mattermost-ai-framework)
 
