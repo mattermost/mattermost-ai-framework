@@ -38,13 +38,13 @@ Example: Watch a minute-long demo for discussion summarization using a fully ope
   - [Usage](#usage)
     - [Ask a question](#ask-a-question)
     - [Summarize thread](#summarize-thread)
-  - [Related Efforts](#related-efforts)
+  - [Community Resources](#community-resources)
+    - [OpenOps \& AI](#openops--ai)
+    - [Mattermost](#mattermost)
   - [Contributing](#contributing)
   - [License](#license)
 
 ## Background
-
-**🚀 Check out [our AI developer website](https://mattermost.github.io/mattermost-ai-site/), join the ["AI Exchange" channel](https://community.mattermost.com/core/channels/ai-exchange), and explore the [peer-to-peer forums](https://forum.mattermost.com/c/ai-frameworks/40) where Mattermost's open source community is sharing AI news and innovation in real time!**
 
 This project is a framework for a self-hosted AI app in a multi-user chat environment that can be fully private and off-grid AKA air-gapped. Check out the [demo from May 15, 2023](https://www.linkedin.com/posts/iantien_opensource-writing-ai-activity-7064180683354636288-161h?utm_source=share&utm_medium=member_desktop). 
 
@@ -127,29 +127,23 @@ Now, open the message app menu button (4 squares) on any post in a public channe
 | :------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
 | ![Requesting a thread summary](https://github.com/azigler/mattermost-ai-framework/assets/7295363/0d048925-37b0-47dd-84c0-e7c76ba2cffc) | ![Getting the summary](https://github.com/azigler/mattermost-ai-framework/assets/7295363/019f7e59-23df-4cc5-9268-37677b32837a) |
 
-## Related Efforts
+## Community Resources 
 
-The current stage is an early proof-of-concept. There are several directions this could go in, including:
+### OpenOps & AI
+- [OpenOps General Discussion on Mattermost Forum](https://forum.mattermost.com/c/openops-ai/40) 
+- [OpenOps Troubleshooting Discussion on Mattermost Forum](https://forum.mattermost.com/t/openops-ai-troubleshooting/15942/)
+- [OpenOps Q&A on Mattermost Forum](https://forum.mattermost.com/t/openops-ai-faqs/16287)
+- [OpenOps "AI Exchange" channel on Mattermost Community server](https://community.mattermost.com/core/channels/ai-exchange) (for Mattermost community interested in AI)
+- [OpenOps Discord Server](https://discord.gg/VqzB4bz6) (for AI community interested in Mattermost) 
 
-* Support for other AI/LLM services
-* Additional bot capabilities
-* Improved model handling
-* Better UX
+### Mattermost
+- [Mattermost Troubleshooting Discussion on Mattermost Forum](https://forum.mattermost.com/c/trouble-shoot/16)
+- [Mattermost "Peer-to-peer Help" channel on Mattermost Community server](https://community.mattermost.com/core/channels/peer-to-peer-help)
 
-Explore Mattermost's AI initiatives:
-
-* https://ai.mattermost.com
-* https://community.mattermost.com/core/channels/ask-chatgpt
-* https://forum.mattermost.com/c/ai-frameworks/40
-* https://docs.mattermost.com/about/mattermost-customizable-chatgpt-bot-framework.html
-* https://mattermost.com/add-chatgpt-to-mattermost/
-* https://github.com/crspeller/mattermost-plugin-summarize/
-* https://github.com/Brightscout/mattermost-plugin-openai
-* https://github.com/yGuy/chatgpt-mattermost-bot
 
 ## Contributing
 
-See Mattermost's [contributor guide](https://developers.mattermost.com/contribute/) to learn about contributing to our open source projects like this one.
+Thank you for your interest in contributing! We’re glad you’re here! ❤️ We recommend reading Mattermost's [contributor guide](https://developers.mattermost.com/contribute/) to learn more about our community!
 
 ## License
 
