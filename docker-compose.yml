@@ -5,7 +5,7 @@ networks:
 services:
   serge:
     container_name: serge
-    image: "ghcr.io/nsarrazin/serge:latest"
+    image: "ghcr.io/serge-chat/serge:latest"
     restart: "unless-stopped"
     volumes:
       - "./serge/datadbdb:/data/db"
